@@ -25,7 +25,7 @@ SECRET_KEY = '!v)4zd2npj*q1z&2_a6@t1_vwv(x+wr&^5b(6po3mdc_w7r=m#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["dear-dir-plyn85"]
 
 
 # Application definition
@@ -74,12 +74,13 @@ WSGI_APPLICATION = 'dear_diary.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+DATABASES = {'default': dj_database_url.parse("postgres://nmhibimkkoehne:0e18c94360fba7bfd169b95ae5ad7c6dcf5331b9d3839aa61e9f90756063bc80@ec2-54-75-229-28.eu-west-1.compute.amazonaws.com:5432/dc49d91681bgq9")}
 
 
 # Password validation

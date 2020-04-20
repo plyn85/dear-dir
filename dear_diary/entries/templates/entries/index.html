@@ -43,9 +43,10 @@
               </p>
             </div>
           </div>
-          <form action="" method="POST">
+          <form action="delete/{{entry.id}}" method="POST">
+            {% csrf_token %}
           <div class="row">
-            <div class="col"><button>Delete</button>
+            <div class="col"><input  type="submit" value="Delete"></input>
             </div>
           </div>
         </form>

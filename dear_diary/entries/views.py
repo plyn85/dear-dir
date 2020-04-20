@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from .models import Entry
 from .forms import EntryForm
 
@@ -22,3 +22,10 @@ def add(request):
     context = {'form': form}
    
     return render(request,'entries/add.html',context)
+
+def delete_entry(request,entry_id):
+    entry = get_object_or_404(Entry,pk=entry_id)
+    form = EntryForm(request.POST,instance=entry)
+    entry.delete()
+    return redirect('home')
+
